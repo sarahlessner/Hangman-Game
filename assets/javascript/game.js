@@ -1,7 +1,10 @@
 
-dogsArray = ["labrador", "husky", "rotweiler", "pitbull", "pug", "beagle", "collie", "shepherd", "yorkie", "samoyed", "newfoundland", "maltese"];
-
-//user presses a key to begin game which generates a word from dogsArray
+dogsArray = ["labrador", "husky", "rotweiler", "pitbull", "pug", "beagle", 
+"collie", "shepherd", "yorkie", "samoyed", "newfoundland", "maltese"];
+imagesArray =["assets/images/hangman10.bmp", "assets/images/hangman9.bmp", "assets/images/hangman8.bmp", 
+"assets/images/hangman7.bmp", "assets/images/hangman6.bmp","assets/images/hangman5.bmp",
+"assets/images/hangman4.bmp", "assets/images/hangman3.bmp", "assets/images/hangman2.bmp", 
+"assets/images/hangman1.bmp", "assets/images/hangman0.bmp"];
 
 var randomDog = "";
 var hiddenDog;
@@ -42,6 +45,8 @@ document.onkeyup = function(event) {
 				}
 				
 			}
+			document.getElementById("wordtoguess").innerHTML = " " + hiddenDog.join(" ");
+
 			if (match === false) {
 
 				if (wrongletters.includes(keyPress)){
@@ -52,13 +57,16 @@ document.onkeyup = function(event) {
 					document.getElementById("guessed").innerHTML = " " + wrongletters.join(" ");
 					turnsleft--;
 					document.getElementById("turnsleft").innerHTML = " " + turnsleft;
+					document.getElementById("hangimages").src = imagesArray[turnsleft];
 					if (turnsleft === 0) {
-						initRound();
+						document.getElementById("guesstheword").innerHTML = "EPIC FAIL! The word you were trying to guess is:"
+						document.getElementById("genword").innerHTML = "Press 1 to Generate a New Word";
+						document.getElementById("wordtoguess").innerHTML = " " + randomDog;
+						randomDog = "";
 					}	
 				}
 
 			}
-			document.getElementById("wordtoguess").innerHTML = " " + hiddenDog.join(" ");
 			if (hiddenDog.join("") == randomDog) {
 				wins++;
 				document.getElementById("wins").innerHTML = " " + wins;
@@ -66,12 +74,15 @@ document.onkeyup = function(event) {
 				document.getElementById("genword").innerHTML = "Press 1 to Generate a New Word";
 
 			}
-			
 		}
+		else {
+			document.getElementById("genword").innerHTML = "Press any letter key to make a guess"; 
+		}	
 	}
 };
 
 function initRound(){
+	document.getElementById("guesstheword").innerHTML = "Guess the Word by Pressing Letters:";
 	randomDog = dogsArray[Math.floor(Math.random() * dogsArray.length)];
 	hiddenDog = new Array(randomDog.length);
 	wrongletters = [];
@@ -84,21 +95,12 @@ function initRound(){
 	document.getElementById("wordtoguess").innerHTML = " " + hiddenDog.join(" ");
 	document.getElementById("guessed").innerHTML = " " + wrongletters.join(" ");
 	document.getElementById("turnsleft").innerHTML = " " + turnsleft;
+	document.getElementById("hangimages").src = imagesArray[turnsleft];
+	
 
 };
 
 		
-
-	
-
-
-
-
-
-
-
-
-// conceal "randomDog" wordtoguess in HTML so user sees only _ _ _ _ _ ...
 
 
 
