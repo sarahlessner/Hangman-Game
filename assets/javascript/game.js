@@ -26,6 +26,7 @@ document.onkeyup = function(event) {
 	document.getElementById("genword").innerHTML = "";
 
 	var keyPress = event.key;
+
 	
 	if (randomDog === "") {
 		//pre-game 
@@ -77,9 +78,10 @@ document.onkeyup = function(event) {
 			if (hiddenDog.join("") == randomDog) {
 				wins++;
 				document.getElementById("wins").innerHTML = " " + wins;
+				document.getElementById("guesstheword").innerHTML = "Who's a good boy? "
 				document.getElementById("puppypic").src = dogImgArray[randomIdx];
 				randomDog = "";
-				document.getElementById("genword").innerHTML = "Press 1 to Generate a New Word";
+				document.getElementById("genword").innerHTML = "Press 1 to Generate a New Dog to Guess";
 
 			}
 		}
@@ -90,7 +92,7 @@ document.onkeyup = function(event) {
 };
 
 function initRound(){
-	document.getElementById("guesstheword").innerHTML = "Guess the Word by Pressing Letters:";
+	document.getElementById("guesstheword").innerHTML = "Guess the Dog by Pressing Letters:";
 	randomIdx = Math.floor(Math.random() * dogsArray.length);
 	randomDog = dogsArray[randomIdx];
 	hiddenDog = new Array(randomDog.length);
@@ -105,6 +107,8 @@ function initRound(){
 	document.getElementById("guessed").innerHTML = " " + wrongletters.join(" ");
 	document.getElementById("turnsleft").innerHTML = " " + turnsleft;
 	document.getElementById("hangimages").src = imagesArray[turnsleft];
+	document.getElementById("puppypic").src = "";
+
 	
 
 };

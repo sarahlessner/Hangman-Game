@@ -1,13 +1,37 @@
 body {
 	font-family: 'Annie Use Your Telescope', cursive;
 	font-size: 24px;
+	background-image: url("assets/images/paw-background.gif");
+
 }
 
 h1 {
 	font-weight: bold;
 	font-size: 40px;
+	text-align: center;
+}
+
+#gamearea {
+	margin-top: 100px;
 }
 
 #puppypic {
 	max-width: 300px;
+}
+
+#wordtoguess {
+	color: #55bbd5;
+}
+
+#hangimages {
+	
+}
+
+
+.alerts {
+	color: #d625ba;
+	font-size: 40px;
+	font-weight: bolder;
+	margin: 15px;
+	margin-right: 100px;
 }

@@ -17,26 +17,52 @@
 </head>
 <body>
 
-<h1>PUPPY HANGMAN</h1>
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<h1 class="navbar-left">PUPPY HANGMAN</h1>
+		<h2 class="navbar-right alerts"><span id="genword"> PRESS "1" TO GENERATE A DOG TO GUESS</span></h2>
+	    
+
+	</div>
+</nav>
 
 
-	<h2><span id="guesstheword"></span><span id="wordtoguess"></span></h2>
 
-	<div>
-	 <img id = "puppypic">
+<div class="container" id="gamearea">
+	<div class="row">
+		<div class="col-sm-7 col-sm-offset-1">
+			<h2><span id="guesstheword"></span><span id="wordtoguess"></span></h2>
+
+			<div>
+				<img id = "puppypic">
+			</div>
+			
+		</div>
+
+		<div class="panel panel-default col-sm-4">
+
+			<h2>Guesses Remaining:<span id="turnsleft"></span></h2>
+
+			<h2>Wrong Guesses:<span id="guessed"></span></h2>
+
+			<h2>Wins:<span id="wins"></span></h2> 
+
+		</div>
 	</div>
 
-	<h2><span id="genword"> PRESS "1" TO GENERATE A WORD TO GUESS</span></h2>
 
-	<h2>Wins:<span id="wins"></span></h2>
 
-	<h2>Guesses Remaining:<span id="turnsleft"></span></h2>
 
-	<h2>Wrong Guesses:<span id="guessed"></span></h2>
+	
 
 	<div>
 		<img src="assets/images/hangman0.bmp" id="hangimages" alt="starting hook">
 	</div>
+
+
+
+	
+</div>
 
 
 
