@@ -1,11 +1,18 @@
 
 dogsArray = ["labrador", "husky", "rotweiler", "pitbull", "pug", "beagle", 
-"collie", "shepherd", "yorkie", "samoyed", "newfoundland", "maltese"];
+"collie", "shepherd", "yorkie", "samoyed", "newfoundland", "mastiff"];
+
 imagesArray =["assets/images/hangman10.bmp", "assets/images/hangman9.bmp", "assets/images/hangman8.bmp", 
 "assets/images/hangman7.bmp", "assets/images/hangman6.bmp","assets/images/hangman5.bmp",
 "assets/images/hangman4.bmp", "assets/images/hangman3.bmp", "assets/images/hangman2.bmp", 
 "assets/images/hangman1.bmp", "assets/images/hangman0.bmp"];
 
+dogImgArray = ["assets/images/puppy0.jpg", "assets/images/puppy01.jpg", "assets/images/puppy02.jpg",
+"assets/images/puppy03.jpg","assets/images/puppy04.jpg","assets/images/puppy05.jpg","assets/images/puppy06.jpg",
+"assets/images/puppy07.jpg","assets/images/puppy08.jpg","assets/images/puppy09.jpg",
+"assets/images/puppy10.jpg","assets/images/puppy11.jpg",];
+
+var randomIdx = "";
 var randomDog = "";
 var hiddenDog;
 var wrongletters = [];
@@ -59,7 +66,7 @@ document.onkeyup = function(event) {
 					document.getElementById("turnsleft").innerHTML = " " + turnsleft;
 					document.getElementById("hangimages").src = imagesArray[turnsleft];
 					if (turnsleft === 0) {
-						document.getElementById("guesstheword").innerHTML = "EPIC FAIL! The word you were trying to guess is:"
+						document.getElementById("guesstheword").innerHTML = "YOU LOSE! The word you were trying to guess is:"
 						document.getElementById("genword").innerHTML = "Press 1 to Generate a New Word";
 						document.getElementById("wordtoguess").innerHTML = " " + randomDog;
 						randomDog = "";
@@ -70,6 +77,7 @@ document.onkeyup = function(event) {
 			if (hiddenDog.join("") == randomDog) {
 				wins++;
 				document.getElementById("wins").innerHTML = " " + wins;
+				document.getElementById("puppypic").src = dogImgArray[randomIdx];
 				randomDog = "";
 				document.getElementById("genword").innerHTML = "Press 1 to Generate a New Word";
 
@@ -83,7 +91,8 @@ document.onkeyup = function(event) {
 
 function initRound(){
 	document.getElementById("guesstheword").innerHTML = "Guess the Word by Pressing Letters:";
-	randomDog = dogsArray[Math.floor(Math.random() * dogsArray.length)];
+	randomIdx = Math.floor(Math.random() * dogsArray.length);
+	randomDog = dogsArray[randomIdx];
 	hiddenDog = new Array(randomDog.length);
 	wrongletters = [];
 	turnsleft = 10;

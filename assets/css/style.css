@@ -1,0 +1,13 @@
+body {
+	font-family: 'Annie Use Your Telescope', cursive;
+	font-size: 24px;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 40px;
+}
+
+#puppypic {
+	max-width: 300px;
+}
