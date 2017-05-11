@@ -29,6 +29,8 @@ document.onkeyup = function(event) {
 
 	var keyPress = event.key;
 
+	keyPress = keyPress.toLowerCase();
+
 	
 	if (randomDog === "") {
 		
