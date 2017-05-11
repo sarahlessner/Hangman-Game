@@ -1,7 +1,6 @@
 body {
 	font-family: 'Annie Use Your Telescope', cursive;
 	font-size: 24px;
-	background-image: url("assets/images/paw-background.gif");
 
 }
 
@@ -9,6 +8,7 @@ h1 {
 	font-weight: bold;
 	font-size: 40px;
 	text-align: center;
+	color: #7135ff;
 }
 
 #gamearea {
@@ -17,19 +17,51 @@ h1 {
 
 #puppypic {
 	max-width: 300px;
+	margin-left: -15px;
 }
 
 #wordtoguess {
-	color: #55bbd5;
+	color: #60d3ff;
+	font-size: 75px;
+	font-weight: bolder;
 }
 
-#hangimages {
-	
+.navbar{
+	background: #eee;
+	border-color: #80fb97;
 }
 
+.sidebar {
+	border-color: #80fb97;
+	border-radius: 0;
+	background: #eee;
+	padding: 5px;
+
+}
+
+.sidebartxt {
+	font-size: 22px;
+}
+
+.sidebarimg {
+	margin-top: 10px;
+}
+
+#wins,
+#turnsleft,
+#guessed {
+	font-size: 32px;
+	color: #f79fff;
+
+}
+
+#guesstheword {
+	font-size: 28px;
+	color: #ffb660;
+}
 
 .alerts {
-	color: #d625ba;
+	color: #f79fff;
 	font-size: 40px;
 	font-weight: bolder;
 	margin: 15px;

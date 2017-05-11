@@ -8,10 +8,11 @@
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+	
+	<link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-	<link href="https://fonts.googleapis.com/css?family=Annie+Use+Your+Telescope" rel="stylesheet">
 
 
 </head>
@@ -19,7 +20,7 @@
 
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
-		<h1 class="navbar-left">PUPPY HANGMAN</h1>
+		<h1 class="navbar-left"><img src="assets/images/pawprint.png"> PUPPY HANGMAN <img src="assets/images/pawprint.png"></h1>
 		<h2 class="navbar-right alerts"><span id="genword"> PRESS "1" TO GENERATE A DOG TO GUESS</span></h2>
 	    
 
@@ -30,24 +31,52 @@
 
 <div class="container" id="gamearea">
 	<div class="row">
-		<div class="col-sm-7 col-sm-offset-1">
-			<h2><span id="guesstheword"></span><span id="wordtoguess"></span></h2>
+		
+		<div class="container panel panel-default col-sm-4 sidebar">
+			<div class="row">
 
-			<div>
-				<img id = "puppypic">
+				<div class="col-sm-10">
+
+					<h2 class="sidebartxt">Wins: <span id="wins"></span></h2>
+
+					<h2 class="sidebartxt">Guesses Remaining:<span id="turnsleft"></span></h2>
+
+					<h2 class="sidebartxt">Wrong Guesses:<span id="guessed"></span></h2>
+				</div>
+
+				<div class="sidebarimg col-sm-2">
+					<img src="assets/images/pawprint.png">
+				</div>
 			</div>
+		</div>
+
+		<div class="col-sm-6 col-sm-offset-2">
+
+			<h2><span id="guesstheword"></span>
+			<br>
+			<span id="wordtoguess"></span></h2>
+		
 			
 		</div>
 
-		<div class="panel panel-default col-sm-4">
+	</div>
 
-			<h2>Guesses Remaining:<span id="turnsleft"></span></h2>
+	<div class="row">
 
-			<h2>Wrong Guesses:<span id="guessed"></span></h2>
+		<div class="col-sm-4">
+			<div>
+				<img id = "puppypic">
+			</div>
+		</div>
 
-			<h2>Wins:<span id="wins"></span></h2> 
+		<div class="col-sm-7 col-sm-offset-1">
+
+			<div>
+				<img src="assets/images/hangman10.bmp" id="hangimages">
+			</div>
 
 		</div>
+
 	</div>
 
 
@@ -55,9 +84,7 @@
 
 	
 
-	<div>
-		<img src="assets/images/hangman0.bmp" id="hangimages" alt="starting hook">
-	</div>
+	
 
 
 

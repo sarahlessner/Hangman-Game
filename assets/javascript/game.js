@@ -1,6 +1,6 @@
 
 dogsArray = ["labrador", "husky", "rotweiler", "pitbull", "pug", "beagle", 
-"collie", "shepherd", "yorkie", "samoyed", "newfoundland", "mastiff"];
+"collie", "shepherd", "yorkie", "samoyed", "mastiff"];
 
 imagesArray =["assets/images/hangman10.bmp", "assets/images/hangman9.bmp", "assets/images/hangman8.bmp", 
 "assets/images/hangman7.bmp", "assets/images/hangman6.bmp","assets/images/hangman5.bmp",
@@ -10,7 +10,7 @@ imagesArray =["assets/images/hangman10.bmp", "assets/images/hangman9.bmp", "asse
 dogImgArray = ["assets/images/puppy0.jpg", "assets/images/puppy01.jpg", "assets/images/puppy02.jpg",
 "assets/images/puppy03.jpg","assets/images/puppy04.jpg","assets/images/puppy05.jpg","assets/images/puppy06.jpg",
 "assets/images/puppy07.jpg","assets/images/puppy08.jpg","assets/images/puppy09.jpg",
-"assets/images/puppy10.jpg","assets/images/puppy11.jpg",];
+"assets/images/puppy11.jpg",];
 
 var randomIdx = "";
 var randomDog = "";
@@ -21,6 +21,8 @@ var turnsleft = 10;
 
 document.getElementById("wins").innerHTML = " " + wins;
 document.getElementById("turnsleft").innerHTML = " " + turnsleft;
+document.getElementById("guesstheword").innerHTML = "Guess the Dog by Pressing Letters:";
+document.getElementById("wordtoguess").innerHTML = "? ? ? ? ? ? ?";
 
 document.onkeyup = function(event) {
 	document.getElementById("genword").innerHTML = "";
@@ -29,7 +31,7 @@ document.onkeyup = function(event) {
 
 	
 	if (randomDog === "") {
-		//pre-game 
+		
 		if (keyPress === "1") {
 			initRound();
 			
@@ -67,7 +69,7 @@ document.onkeyup = function(event) {
 					document.getElementById("turnsleft").innerHTML = " " + turnsleft;
 					document.getElementById("hangimages").src = imagesArray[turnsleft];
 					if (turnsleft === 0) {
-						document.getElementById("guesstheword").innerHTML = "YOU LOSE! The word you were trying to guess is:"
+						document.getElementById("guesstheword").innerHTML = "YOU LOSE! The dog you were trying to guess was:"
 						document.getElementById("genword").innerHTML = "Press 1 to Generate a New Word";
 						document.getElementById("wordtoguess").innerHTML = " " + randomDog;
 						randomDog = "";
@@ -92,7 +94,6 @@ document.onkeyup = function(event) {
 };
 
 function initRound(){
-	document.getElementById("guesstheword").innerHTML = "Guess the Dog by Pressing Letters:";
 	randomIdx = Math.floor(Math.random() * dogsArray.length);
 	randomDog = dogsArray[randomIdx];
 	hiddenDog = new Array(randomDog.length);
@@ -102,14 +103,12 @@ function initRound(){
 		hiddenDog[i] = "_";
 
 	}
-
+	document.getElementById("guesstheword").innerHTML = "Guess the Dog by Pressing Letters:";
 	document.getElementById("wordtoguess").innerHTML = " " + hiddenDog.join(" ");
 	document.getElementById("guessed").innerHTML = " " + wrongletters.join(" ");
 	document.getElementById("turnsleft").innerHTML = " " + turnsleft;
 	document.getElementById("hangimages").src = imagesArray[turnsleft];
 	document.getElementById("puppypic").src = "";
-
-	
 
 };
 
