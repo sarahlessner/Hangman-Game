@@ -23,6 +23,8 @@ document.getElementById("turnsleft").innerHTML = " " + turnsleft;
 document.getElementById("guesstheword").innerHTML = "Press 1 to Guess a Breed:";
 document.getElementById("wordtoguess").innerHTML = "? ? ? ? ? ? ?";
 
+
+
 document.onkeyup = function(event) {
 	document.getElementById("genword").innerHTML = "";
 
